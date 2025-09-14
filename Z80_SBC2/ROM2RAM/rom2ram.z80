@@ -1,0 +1,20 @@
+        ORG 0x8000        ; start out of 0000–3FFF
+
+COPY_LOOP:
+        LD   HL,0x0000    ; start address
+        LD   DE,0x4000    ; last address + 1
+
+NEXT_BYTE:
+        LD   A,(HL)       ; read content pointed by HL
+        LD   (HL),A       ; write it to address pointed by HL
+        INC  HL           ; next address
+
+        LD   A,H
+        CP   D            ; compare high byte
+        JR   NZ,NEXT_BYTE
+        LD   A,L
+        CP   E            ; compare low byte
+        JR   NZ,NEXT_BYTE
+
+        RET
+        

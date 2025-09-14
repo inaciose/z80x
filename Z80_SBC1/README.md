@@ -8,6 +8,10 @@ ROM 9B000000.BIN with (RC2014 versions):
 
 Press reset after power on (the reset circuit must be revised)
 
+Help (commands): help  
+MS-BASIC: G 2000  
+Exit MS-BASIC: monitor  
+
 # Equations  
 MEMRD = MREQ_ + RD_  
 MEMWR = MREQ_ + WR_  

@@ -5,6 +5,24 @@ Pageable ROM/RAML16K (0x38 toggle page, 0x30 reset page)
 
 Same ROM as Z80_SBC1: 9B000000.BIN; (or the one with CP/M 2.2 bootloader ?)  
 
+Press reset after power on (the reset circuit must be revised)
+Help (commands): help  
+MS-BASIC: G 2000  
+Exit MS-BASIC: monitor  
+
+# Page ROM
+
+Copy ROM to RAM  
+Load ROM2RAM  
+G 8000  
+
+Toogle PAGE  
+O 38 HH  
+
+Restart PAGE  
+0 30 HH  
+
+
 # Equations  
 MEMRD = MREQ_ + RD_  
 MEMWR = MREQ_ + WR_  

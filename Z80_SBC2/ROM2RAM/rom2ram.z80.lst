@@ -1,0 +1,21 @@
+8000                          .ORG   0x8000   ; start out of 0000–3FFF
+8000                COPY_LOOP:      
+8000   21 00 00               LD   HL,0x0000   ; start address
+8003   11 00 40               LD   DE,0x4000   ; last address + 1
+8006                NEXT_BYTE:      
+8006   7E                     LD   A,(HL)   ; read content pointed by HL
+8007   77                     LD   (HL),A   ; write it to address pointed by HL
+8008   23                     INC   HL   ; next address
+8009   7C                     LD   A,H   
+800A   BA                     CP   D   ; compare high byte
+800B   20 F9                  JR   NZ,NEXT_BYTE   
+800D   7D                     LD   A,L   
+800E   BB                     CP   E   ; compare low byte
+800F   20 F5                  JR   NZ,NEXT_BYTE   
+8011   C9                     RET      
+
+
+COPY_LOOP:          8000 DEFINED AT LINE 3
+NEXT_BYTE:          8006 DEFINED AT LINE 7
+                    > USED AT LINE 14
+                    > USED AT LINE 17
