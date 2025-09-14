@@ -13,14 +13,14 @@ Exit MS-BASIC: monitor
 # Page ROM
 
 Copy ROM to RAM  
-Load ROM2RAM  
+Load rom2ram.z80.hex file contents    
 G 8000  
 
 Toogle PAGE  
-O 38 HH  
+o 38 HH  
 
-Restart PAGE  
-0 30 HH  
+Reset PAGE  
+o 30 HH  
 
 
 # Equations  
